@@ -27,7 +27,7 @@ func main() {
 		break
 	}
 
-	fmt.Printf("Answer to part 2: %v\n", result)
+	fmt.Printf("Answer to part 1: %v\n", result)
 
 	for _, value := range values {
 		found := findTwoAddingUp(&values, value)
