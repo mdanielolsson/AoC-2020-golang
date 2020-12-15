@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	utils "github.com/mdanielolsson/advent-of-code/golang/utils"
+	utils "github.com/mdanielolsson/advent-of-code/utils"
 )
 
 func main() {
