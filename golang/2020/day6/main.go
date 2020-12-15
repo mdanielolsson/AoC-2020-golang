@@ -33,7 +33,7 @@ func sumGroupUniqueAnswers(groups []string) int {
 		uniqueAnswers := make(map[string]bool)
 		v = strings.Replace(v, "\n", "", -1)
 		yesAnswers := strings.Split(v, "")
-		sort.Strings(yesAnswers)
+		sort.Strings(yesAnswers) // necessary anymore?
 		for _, c := range yesAnswers {
 			if !uniqueAnswers[c] {
 				uniqueAnswers[c] = true

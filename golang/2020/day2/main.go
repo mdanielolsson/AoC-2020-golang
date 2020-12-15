@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"log"
 	"regexp"
-	"strconv"
 	"strings"
+
+	utils "github.com/mdanielolsson/advent-of-code/golang/utils"
 )
 
 type entry struct {
@@ -61,8 +62,8 @@ func parseEntry(input string) entry {
 	if r == nil {
 		log.Fatal("Invalid input\n", input)
 	}
-	min, _ := strconv.Atoi(r[0][1])
-	max, _ := strconv.Atoi(r[0][2])
+	min := utils.StringToInt(r[0][1])
+	max := utils.StringToInt(r[0][2])
 	result := entry{
 		min:      min,
 		max:      max,

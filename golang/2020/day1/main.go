@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"strconv"
 	"strings"
+
+	utils "github.com/mdanielolsson/advent-of-code/golang/utils"
 )
 
 func main() {
@@ -20,7 +20,7 @@ func main() {
 		break
 	}
 
-	fmt.Printf("Answer to part 1: %v\n", result)
+	fmt.Printf("Part 1: %v\n", result)
 
 	for _, value := range values {
 		found := findTwoAddingUp(&values, value)
@@ -31,7 +31,7 @@ func main() {
 		break
 	}
 
-	fmt.Printf("Answer to part 2: %v\n", result)
+	fmt.Printf("Part 2: %v\n", result)
 }
 
 // multiplyAll will multiply all values of a slice of integers and return the result
@@ -70,14 +70,10 @@ func findTwoAddingUp(values *[]int, i int) []int {
 
 // readValues takes input file descriptor and populate and return slice of all values in the file
 func readValues() []int {
-
 	data := strings.Split(input, "\n")
 	var values []int
 	for _, v := range data {
-		i, err := strconv.Atoi(v)
-		if err != nil {
-			log.Fatal(err)
-		}
+		i := utils.StringToInt(v)
 		values = append(values, i)
 	}
 	return values

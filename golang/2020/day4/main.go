@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 	"regexp"
-	"strconv"
 	"strings"
+
+	utils "github.com/mdanielolsson/advent-of-code/golang/utils"
 )
 
 func main() {
@@ -65,17 +66,17 @@ func validatePassport(p map[string]string) int {
 		}
 		switch field {
 		case "byr":
-			x, _ := strconv.Atoi(p[field])
+			x := utils.StringToInt(p[field])
 			if x < 1920 || x > 2002 {
 				return 1
 			}
 		case "iyr":
-			x, _ := strconv.Atoi(p[field])
+			x := utils.StringToInt(p[field])
 			if x < 2010 || x > 2020 {
 				return 1
 			}
 		case "eyr":
-			x, _ := strconv.Atoi(p[field])
+			x := utils.StringToInt(p[field])
 			if x < 2020 || x > 2030 {
 				return 1
 			}
@@ -85,13 +86,13 @@ func validatePassport(p map[string]string) int {
 				return 1
 			}
 			if strings.HasSuffix(p[field], "cm") {
-				x, _ := strconv.Atoi(strings.TrimSuffix(p[field], "cm"))
+				x := utils.StringToInt(strings.TrimSuffix(p[field], "cm"))
 				if x < 150 || x > 193 {
 					return 1
 				}
 			}
 			if strings.HasSuffix(p[field], "in") {
-				x, _ := strconv.Atoi(strings.TrimSuffix(p[field], "in"))
+				x := utils.StringToInt(strings.TrimSuffix(p[field], "in"))
 				if x < 59 || x > 76 {
 					return 1
 				}
